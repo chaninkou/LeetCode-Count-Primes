@@ -8,6 +8,7 @@ public class FindNumbersOfPrimesFunction {
         
         int count = 0;
         
+        // Start from two because 1 is not a prime number
         for(int i = 2; i < n; i++){
             // Every element will be prime at first
             if(notPrime[i] == false){
