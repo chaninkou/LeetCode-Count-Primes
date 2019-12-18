@@ -3,24 +3,28 @@ package countPrimes;
 public class FindNumbersOfPrimesFunction {
     // Using sieve of eratosthenes algorithm
     public int countPrimes(int n) {
-        // All the element will be false as default
-        boolean[] notPrime = new boolean[n];
-        
-        int count = 0;
-        
-        // Start from two because 1 is not a prime number
-        for(int i = 2; i < n; i++){
-            // Every element will be prime at first
-            if(notPrime[i] == false){
-                // Add count since it is a prime
-                count++;
-                // i * j since it is not prime
-                for(int j = 2; i * j < n; j++){
-                    // 2 * 2, 2 * 3, 2 * 4 ....
-                    notPrime[i * j] = true;
-                }
-            }
-        }
+        // Every number is a prime at first, false means prime number
+    	boolean[] notPrime = new boolean[n];
+    	
+    	// Number of prime numbers
+    	int count = 0;
+    	
+    	// Starting from 2 because the first number of prime is 2
+    	// Til n cause we are counting number of prime under n
+    	for(int i = 2; i < n; i++){
+    		// If it is a prime number, increase the count
+    		if(notPrime[i] == false){
+    			count++;
+    			
+    			// Marking whichever one that is not a prime, by multiply from 2 and above
+    			// i * j < n cause the boolean is only n size
+    			for(int j = 2; i * j < n; j++)
+    			{
+    				// Sometimes we might make something that is already true to true, but no harm
+    				notPrime[i * j] = true;
+    			}
+    		}
+    	}
         
         return count;
     }
