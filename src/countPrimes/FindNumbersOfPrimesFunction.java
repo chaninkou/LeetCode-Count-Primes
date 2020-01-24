@@ -14,6 +14,7 @@ public class FindNumbersOfPrimesFunction {
     	for(int i = 2; i < n; i++){
     		// If it is a prime number, increase the count
     		if(notPrime[i] == false){
+    			// Increase the count every time if its a prime number
     			count++;
     			
     			// Marking whichever one that is not a prime, by multiply from 2 and above
@@ -28,4 +29,5 @@ public class FindNumbersOfPrimesFunction {
         
         return count;
     }
+   
 }
