@@ -1,4 +1,4 @@
-package countPrimes;
+package leetcode204;
 
 public class FindNumbersOfPrimesFunction {
     // Using sieve of eratosthenes algorithm
